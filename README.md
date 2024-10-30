@@ -1,1 +1,1 @@
-# ACTIX-Rust-React-Typescript-
+# ACTIX (Rust) + React (Typescript) 
