@@ -1,0 +1,21 @@
+Как установить Curl в Ubuntu:
+https://pq.hosting/help/instructions/91-kak-ustanovit-curl-v-ubuntu.html
+
+
+Последовательность установки actix-web:
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env
+cargo new backend_actix_web
+cd backend_actix_web
+
+официальный гайд:
+https://doc.rust-lang.org/book/ch01-01-installation.html
+https://actix.rs/docs/getting-started
+
+
+Перед компиляцией нужно поставить build-essential (по умолчанию на Ubuntu не стоит):
+sudo apt-get update
+sudo apt install build-essential
+
+cargo run
+Запуск: http://127.0.0.1:8080/

@@ -1,0 +1,21 @@
+WebAssembly в Яндекс.Картах
+https://habr.com/ru/companies/yandex/articles/475382/
+
+JavaScript vs TypeScript. Почему Вы должны изучить TypeScript?
+https://habr.com/ru/articles/660791/
+
+(WASM) на Ubuntu:
+https://habr.com/ru/articles/325008/
+
+Базовый шаблон создания проекта Django:
+https://habr.com/ru/articles/692518/
+
+
+Стек технологий на базе Rust с использованием WebAssembly:
+https://habr.com/ru/companies/ruvds/articles/416933/
+
+RUST в веб-разработке
+https://habr.com/ru/articles/721856/
+
+Пробуем делать web-frontend на Rust (WebAssembly)
+https://habr.com/ru/articles/325008/
