@@ -1,0 +1,10 @@
+/home/ilya/actix-react/server/target/debug/deps/liballoc_no_stdlib-f8a6cbe19157dc33.rmeta: /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/lib.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_memory/mod.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_memory/index_macro.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/stack_allocator.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_stack_memory.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/init.rs
+
+/home/ilya/actix-react/server/target/debug/deps/alloc_no_stdlib-f8a6cbe19157dc33.d: /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/lib.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_memory/mod.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_memory/index_macro.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/stack_allocator.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_stack_memory.rs /home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/init.rs
+
+/home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/lib.rs:
+/home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_memory/mod.rs:
+/home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_memory/index_macro.rs:
+/home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/stack_allocator.rs:
+/home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/allocated_stack_memory.rs:
+/home/ilya/.cargo/registry/src/index.crates.io-6f17d22bba15001f/alloc-no-stdlib-2.0.4/src/init.rs:

@@ -1,1 +1,1 @@
-C:\Users\Ilya\Documents\GitHub\actix-react\server\target\debug\server.exe: C:\Users\Ilya\Documents\GitHub\actix-react\server\src\main.rs
+/home/ilya/actix-react/server/target/debug/server: /home/ilya/actix-react/server/src/main.rs
