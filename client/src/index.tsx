@@ -13,7 +13,7 @@ root.render(
   <React.StrictMode>
       <LineBox>
         <button></button>
-      </LineBox>
+      </LineBox> 
   </React.StrictMode>
 );
 
