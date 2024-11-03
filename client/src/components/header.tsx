@@ -18,6 +18,7 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                             <img src={`${process.env.PUBLIC_URL}/icon-login.svg`} alt="Иконка выхода" className="logout__icon" />
                             <span className="logout__text">Выход</span>
                         </a>
+                        <div className="header-links"></div>
                     </div>
                 </div>
             </div>

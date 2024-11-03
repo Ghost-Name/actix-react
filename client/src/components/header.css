@@ -65,7 +65,7 @@
     float: right;
     color: #5f5f5f;
     margin-top: 44px;
-    
+
     text-decoration: none;
 }
 
@@ -76,4 +76,21 @@
     margin-right: 16px;
     vertical-align: middle;
     display: inline-block;
+}
+
+.header-links {
+    float: right;
+    margin-top: 40px;
+    margin-right: 40px;
+    font-size: 0;
+
+    box-sizing: border-box;
+}
+
+.header-link__item {
+    position: relative;
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    margin-left: 20px;
 }
