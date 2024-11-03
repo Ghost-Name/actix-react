@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import LineBox from './components/line_box';
+import Header from './components/header';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -11,9 +11,9 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-      <LineBox>
-        <button></button>
-      </LineBox> 
+      <Header>
+        ''
+      </Header> 
   </React.StrictMode>
 );
 
