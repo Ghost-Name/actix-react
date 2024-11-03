@@ -10,12 +10,16 @@
     height: 125px;
     background-color: #f9f8fe;
     display: flex;
+
+    
   }
 
   .header-sidebar {
     width: 275px !important;
     background: #014282;
     height: 125px;
+    box-sizing: border-box;
+    
 
     border-bottom: 1px solid #295f96;
     transition: width .2s;
@@ -93,4 +97,23 @@
     width: 35px;
     height: 35px;
     margin-left: 20px;
+}
+
+.header-link {
+    cursor: pointer;
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: #fff;
+    border: 1px solid #e1e1e1;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 33px;
+}
+
+.header-link__icon {
+    width: 24px;
+    height: 23px;
+    vertical-align: middle;
+    fill: #1b1b1b;
 }

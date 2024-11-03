@@ -18,7 +18,15 @@ const Header: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                             <img src={`${process.env.PUBLIC_URL}/icon-login.svg`} alt="Иконка выхода" className="logout__icon" />
                             <span className="logout__text">Выход</span>
                         </a>
-                        <div className="header-links"></div>
+                        <div className="header-links">
+                            <div className="header-link__item">
+                            <a className="header-link" href={`${process.env.PUBLIC_URL}/icon-questionnaire.svg`} id="feedbackShowForm">
+
+                                <img src={`${process.env.PUBLIC_URL}/icon-questionnaire.svg`} alt="Иконка обратной связи" className="header-link__icon" />
+
+                            </a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
