@@ -39,8 +39,10 @@ const MainContainer: React.FC<{ children: React.ReactNode }> = ({ children }) =>
     };
 
     return (
-        <div className="page-container">
-            <div className="sidebar" id="scrollbar-menu">
+
+        <div className="page-container"> 
+            {/* Часть в первых 375px */}
+            <div className="sidebar" id="scrollbar-menu"> {/* в этот контейнер нужно добавлять новые кнопки, поля и тд */}
                 <div className="sidebar-content">
                     <div className="input-box">
                         <div className="button-container">
@@ -51,7 +53,7 @@ const MainContainer: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                         {/* Красные поля ввода */}
                         {redInputs.map(input => (
                             <div key={input.id} className="input-item">
-                                <img src={`${process.env.PUBLIC_URL}/red-icon.png`} alt=''/> 
+                                <img src={`${process.env.PUBLIC_URL}/icons/red-icon.png`} alt=''/> 
                                 <input 
                                     type="text" 
                                     value={input.value} 
@@ -64,7 +66,7 @@ const MainContainer: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                         {/* Синие поля ввода */}
                         {blueInputs.map(input => (
                             <div key={input.id} className="input-item">
-                                <img src={`${process.env.PUBLIC_URL}/blue-icon.png`} alt=''/> 
+                                <img src={`${process.env.PUBLIC_URL}/icons/blue-icon.png`} alt=''/> 
                                 <input 
                                     type="text" 
                                     value={input.value} 
@@ -75,12 +77,15 @@ const MainContainer: React.FC<{ children: React.ReactNode }> = ({ children }) =>
                         ))}
                     </div>
                 </div>
-                
+
+            {/* Часть в первых 375px */}   
+         
             </div>
 
-            <div className="page-content">
+            {/* Оставшаяся часть */}
+            <div className="page-content"> {/* отображение картинки (карты) */}
                 <div className="wrapper-page">
-                    <img src={`${process.env.PUBLIC_URL}/screenshot-2.png`} alt="" />
+                    <img src={`${process.env.PUBLIC_URL}/images/screenshot-2.png`} alt="" />
                 </div>
             </div>
         </div>
