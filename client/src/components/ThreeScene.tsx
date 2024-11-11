@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import * as THREE from 'three';
 
 const ThreeScene: React.FC = () => {
-    const mountRef = useRef<HTMLDivElement | null>(null);
+    const mountRef = React.useRef<HTMLDivElement | null>(null); //хук
 
     useEffect(() => {
         const scene = new THREE.Scene();

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './main_container.css';
+import ThreeScene from './ThreeScene'; 
 
 interface InputField {
     id: number;
@@ -85,7 +86,8 @@ const MainContainer: React.FC<{ children: React.ReactNode }> = ({ children }) =>
             {/* Оставшаяся часть */}
             <div className="page-content"> {/* отображение картинки (карты) */}
                 <div className="wrapper-page">
-                    <img src={`${process.env.PUBLIC_URL}/images/screenshot-2.png`} alt="" />
+                    <ThreeScene />
+                    {/* <img src={`${process.env.PUBLIC_URL}/images/screenshot-2.png`} alt="" /> */}
                 </div>
             </div>
         </div>
