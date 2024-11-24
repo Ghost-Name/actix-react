@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 
-import Header from './components/header';
-import MainContainer from './components/main_container';
+import RouterDom from './routerDom'; // маршрутизация
+
 
 
 const root = ReactDOM.createRoot(
@@ -13,13 +13,7 @@ const root = ReactDOM.createRoot(
 
 root.render(
   <React.StrictMode>
-    
-    <Header>
-      ''
-    </Header> 
-    <MainContainer>
-      ''
-    </MainContainer>
+    <RouterDom />
   </React.StrictMode>
 );
 
