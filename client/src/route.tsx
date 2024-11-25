@@ -1,6 +1,14 @@
 import React from 'react';
-import Header from './components/header'; 
-import MainContainer from './components/main_container';
+
+import Header from './components/header/header'; 
+import ScrollBar from './components/scrollbar/scrollbar';
+import Container from './components/container/container';
+import ThreeScene from './components/threejs/ThreeScene';
+
+import NavigationUI from './components/ui/navigation_ui'
+
+
+import './style/pageContainer.css'
 
 const RoutePage: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     return (
@@ -8,9 +16,20 @@ const RoutePage: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
             <Header>
                 {children}  
             </Header>
-            <MainContainer>
-                {children}  
-            </MainContainer>
+            
+            <div className='page-container'>
+                <ScrollBar>
+                    
+                    <NavigationUI>
+                        {children}
+                    </NavigationUI>
+
+                </ScrollBar>
+                
+                <Container>
+                    <ThreeScene />
+                </Container>
+            </div>
         </div>
     );
 };

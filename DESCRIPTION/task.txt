@@ -1,3 +1,4 @@
+до 05.11.2024:
 1) интерфейс в стилистике СамГТУ
 2) окно авторизации
 3) сделать плашку прокладки маршрута
@@ -5,8 +6,18 @@
 5) фотографии популярных мест СамГТУ (например фотография корпуса Точки кипения)
 6) прицепить карту справа
 
+05.11.2024:
+https://github.com/stevenpclark/trrt-unity
+https://discussions.unity.com/t/draw-navigation-line-between-player-and-goal/747197/20
+https://assetstore.unity.com/packages/tools/behavior-ai/astar-2d-tile-based-pathfinding-43604
 
 
 
-
+1) WebGL билд
+2) Типичное проложение маршрута (векторное)
+ *) узнать больше про WASM
+ *) MORE POWER
+ *) скрины для отчётности
+ *)  
+3) Figma  
 

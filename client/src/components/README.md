@@ -1,17 +1,25 @@
-# header.tsx:
-## header-header-empty
+# Классы:
+## общие классы для container.tsx и scrollbar.tsx - (pageContainer.css):
 
-Контейнер для отображения логотипа СамГТУ в className="logo" и кнопок взаимодействия (Иконка обратной связи, Иконка выхода) в className="header-content">.
-Делит страницу на две части (первая 375px и вторая - оставшееся место)
+page-container
 
-## стили к каждому классу есть в файле header.css
+## container.tsx (Container) - (container.css):
 
-# main_container.tsx:
-## page-container
+page-content
+wrapper-page
 
-Контейнер для отображения двух частей (первая 375px и вторая - оставшееся место)
-В первой части: 2 плашки ввода ({redInputs.map(input =>... и {blueInputs.map(input => ...), разделены на красный и синий (их массивы также). 
-Содержит ThreeScene (отображение маршрута)
+## scrollbar.tsx (ScrollBar) - (scrollbar.css):
 
-## стили к каждому классу есть в файле main_container.css
+sidebar
+sidebar-content
+
+## navigation_ui.tsx:
+
+input-box
+button-container
+input-item
+
+
+
+
 

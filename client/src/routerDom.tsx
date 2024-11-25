@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import RoutePage from './route';
 import About from './about';
+import Buildings from './buildings';
+import Dekanat from './dekanat';
 
 const RouterDom: React.FC = () => {
   return (
@@ -10,8 +12,9 @@ const RouterDom: React.FC = () => {
       <Routes>
         <Route path="/" element={<RoutePage />}/> {/* Проложение маршрута */}
         <Route path="/about" element={<About />}/> {/* О проекте */}
-        <Route path="/zo/contacts" element={<About />}/> {/* Информаия о деканатах */}
-        <Route path="/contacts" element={<About />}/>  {/* Информация о корпусах */}
+        <Route path="/zo/contacts" element={<Dekanat />}/> {/* Информаия о деканатах */}
+        <Route path="/contacts" element={<Buildings />}/>  {/* Информация о корпусах */}
+        <Route path="/navigation" element= {<RoutePage />}/> {/* Проложение маршрута */}
       </Routes>
     </Router>
   );

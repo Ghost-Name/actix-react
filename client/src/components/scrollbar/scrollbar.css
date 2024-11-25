@@ -1,0 +1,23 @@
+#scrollbar-menu {
+    overflow-y: auto;
+}
+
+
+.sidebar {
+    float: left;
+    background: #014282;
+    width: 375px;
+    min-height: calc(100vh - 125px);
+    -webkit-transition: width .2s;
+    -o-transition: width .2s;
+    transition: width .2s;
+    overflow: hidden;
+    overflow-y: hidden;
+    padding-bottom: 40px;
+    padding: 30px 0 0;
+  }
+
+.sidebar-content {
+    width: 375px;
+    
+}

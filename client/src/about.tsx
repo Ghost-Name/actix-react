@@ -1,5 +1,9 @@
 import React from 'react';
-import Header from './components/header'; 
+
+import Header from './components/header/header'; 
+import ScrollBar from './components/scrollbar/scrollbar';
+import Container from './components/container/container';
+
 
 const About: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     return (
@@ -7,6 +11,16 @@ const About: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
             <Header>
                 {children}  
             </Header>
+            
+            <div className='page-container'>
+                <ScrollBar>
+                    {children}
+                </ScrollBar>
+                
+                <Container>
+                    {children}
+                </Container>
+            </div>
         </div>
     );
 };
