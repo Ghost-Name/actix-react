@@ -1,0 +1,41 @@
+.buildings--list {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(var(--cols),minmax(200px,1fr));
+    grid-gap: 20px;
+    gap: 20px;
+    
+}
+
+.buildings--list {
+    --cols: 3;
+    
+    list-style: none;
+}
+
+li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    
+}
+
+.building--item {
+    display: block;
+    box-shadow: 0 0 2px rgba(0,0,0,.1);
+    border-radius: 5px;
+    padding: 10px;
+
+    box-sizing: border-box;
+    
+}
+
+.img-building {
+    display: block;
+    font-size: 8em;
+    line-height: 1;
+    text-align: center;
+    padding-bottom: 20px;
+}
+

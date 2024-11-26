@@ -5,7 +5,7 @@ import ScrollBar from './components/scrollbar/scrollbar';
 import Container from './components/container/container';
 
 import MainMenu from './components/ui/main_menu';
-
+import BuildingsUI from './components/ui/buildings_ui/buildings_ui';
 
 const Buildings: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     return (
@@ -22,7 +22,9 @@ const Buildings: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 </ScrollBar>
                 
                 <Container>
-                    {children}
+                    <BuildingsUI>
+                        {children}
+                    </BuildingsUI>
                 </Container>
             </div>
         </div>
