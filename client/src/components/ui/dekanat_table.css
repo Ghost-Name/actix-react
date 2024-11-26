@@ -1,0 +1,110 @@
+.breadcrumbs{
+    background-color: #f5f6f8;
+    padding: 9px 0 4px;
+    font-size: 0;
+}
+@media (min-width: 1200px) {
+    .breadcrumbs--container {
+        width: 1069px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+a {
+    background-color: transparent;
+    color: #337ab7;
+    text-decoration: none;
+}
+.breadcrumbs--item {
+    font-size: 14px;
+    text-align: left;
+    color: rgba(46,45,44,.8);
+
+    
+}
+
+.breadcrumbs--delimiter {
+    width: 15px;
+    height: 13px;
+    fill: #6e6e71;
+    margin: 0 12px;
+    
+    
+}
+
+.breadcrumbs--name {
+    font-size: 14px;
+    text-align: left;
+    fill: #6e6e71;
+    
+}
+
+
+/* dekanat--container */
+@media (min-width: 1200px) {
+    .dekanat--container {
+        width: 1069px;
+        margin-right: auto;
+        margin-left: auto;
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+h1 {
+    margin: 40px 0 23px;
+    padding: 0;
+    line-height: 43px;
+    font-size: 46px;
+    font-weight: 700;
+}
+
+.row {
+    margin-left: -12px;
+    margin-right: -12px;
+
+    box-sizing: border-box;
+}
+
+@media (min-width: 992px) {
+    .col-md-12 {
+      width: 100%;
+    }
+}
+
+.text-block {
+    box-sizing: border-box;
+}
+
+.scrolled-table {
+    width: 100%;
+
+    position: relative;
+}
+
+.text-block-table-items {
+    font-size: 11px;
+    line-height: 18px;
+
+    width: 100%;
+     border-collapse: collapse;
+    border: 1px solid #ededed;
+    border-top-width: 1px;
+    border-top-style: solid;
+    border-top-color: rgb(237, 237, 237);
+    border-top: 3px solid #ec1646;
+}
+
+tr {
+    box-sizing: border-box;
+}
+
+td {
+    border-right: 1px solid #ededed;
+    vertical-align: top;
+    padding: 5px 10px;
+
+}

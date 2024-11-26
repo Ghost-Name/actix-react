@@ -6,23 +6,7 @@
 }
 
 
-/* карта */
-.wrapper-page {
-    display: flex; 
-    flex-direction: column; 
-    height: 100vh; 
-    margin: auto;
-    max-width: 100%; 
-}
 
-.page-content {
-    flex: 1; 
-    box-sizing: border-box;
-    overflow: hidden;
-    display: flex; 
-    flex-direction: column; 
- 
-}
 
 
 

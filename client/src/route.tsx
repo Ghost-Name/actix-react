@@ -26,6 +26,7 @@ const RoutePage: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 
                 <Container>
                     <ThreeScene />
+                    
                 </Container>
             </div>
         </div>

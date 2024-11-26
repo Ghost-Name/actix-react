@@ -5,6 +5,7 @@ import ScrollBar from './components/scrollbar/scrollbar';
 import Container from './components/container/container';
 
 import MainMenu from './components/ui/main_menu';
+import DekanatTable from './components/ui/dekanat_table';
 
 const Dekanat: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     return (
@@ -21,7 +22,9 @@ const Dekanat: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
                 </ScrollBar>
                 
                 <Container>
-                    {children}
+                    <DekanatTable>
+                        {children}
+                    </DekanatTable>
                 </Container>
             </div>
         </div>
