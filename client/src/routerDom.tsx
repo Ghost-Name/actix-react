@@ -10,7 +10,7 @@ const RouterDom: React.FC = () => {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<RoutePage />}/> {/* Проложение маршрута */}
+        <Route path="/" element={<About />}/> {/* О проекте */}
         <Route path="/about" element={<About />}/> {/* О проекте */}
         <Route path="/zo/contacts" element={<Dekanat />}/> {/* Информаия о деканатах */}
         <Route path="/contacts" element={<Buildings />}/>  {/* Информация о корпусах */}

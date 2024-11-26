@@ -6,7 +6,7 @@
 .sidebar {
     float: left;
     background: #014282;
-    width: 375px;
+    width: 275px;
     min-height: calc(100vh - 125px);
     -webkit-transition: width .2s;
     -o-transition: width .2s;
@@ -14,10 +14,11 @@
     overflow: hidden;
     overflow-y: hidden;
     padding-bottom: 40px;
-    padding: 30px 0 0;
+
   }
 
-.sidebar-content {
-    width: 375px;
+.scrollbar-content {
+    width: 275px;
+    
     
 }

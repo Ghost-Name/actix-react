@@ -4,6 +4,8 @@ import Header from './components/header/header';
 import ScrollBar from './components/scrollbar/scrollbar';
 import Container from './components/container/container';
 
+import MainMenu from './components/ui/main_menu';
+
 
 const Buildings: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
     return (
@@ -14,7 +16,9 @@ const Buildings: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
             
             <div className='page-container'>
                 <ScrollBar>
-                    {children}
+                    <MainMenu>
+                        {children}
+                    </MainMenu>
                 </ScrollBar>
                 
                 <Container>
