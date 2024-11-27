@@ -1,0 +1,78 @@
+.sidebar--navigation {
+    float: left;
+    background: #014282;
+    width: 415px;
+    min-height: calc(100vh - 125px);
+    -webkit-transition: width .2s;
+    -o-transition: width .2s;
+    transition: width .5s; 
+    
+    /* 
+    animation: myAnim s linear 1s 1 normal none;
+    */
+
+    overflow: hidden;
+    overflow-y: hidden;
+    padding-bottom: 40px;
+
+
+
+    position: relative;
+    transition: transform 0.3s ease;
+    z-index: 1; /*индекс в иерархии*/
+}
+
+/*
+@keyframes myAnim {
+	0% {
+		opacity: 0;
+		transform: translateX(-250px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+*/
+
+.sidebar--navigation.open {
+    transform: translateX(0);
+    width: 415px;
+}
+
+.sidebar--navigation.closed {
+    
+    width: 40px;
+    
+}
+
+.sidebar--close-open {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 40px; /* Ширина кнопки */
+    height: 100%;
+    background-color: #033a72; /* Цвет фона кнопки */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.sidebar--co-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar--navigation-content {
+    width: 375px;
+}
+
+.sidebar--co-icon {
+    width: 24px; 
+    height: 24px; 
+}

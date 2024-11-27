@@ -15,10 +15,9 @@
     overflow-y: hidden;
     padding-bottom: 40px;
 
+    z-index: 2; /*индекс в иерархии*/
   }
 
 .scrollbar-content {
-    width: 275px;
-    
-    
+    width: 275px; 
 }
