@@ -13,5 +13,7 @@
     overflow: hidden;
     display: flex; 
     flex-direction: column; 
- 
+
+    overflow: auto; /* отвечает за скролл на страницах */
+    
 }

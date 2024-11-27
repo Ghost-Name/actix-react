@@ -49,7 +49,7 @@ const DekanatTable: React.FC<{ children: React.ReactNode }> = ({ children }) => 
                         <div className="text-block">
                             <div className="scrolled-table">
                                 <table className="text-block-table-items">
-                                    <tbody>
+                                    <tbody className="dekanat--tbody">
                                         {/* главная строка с описанием столбцов*/}
                                         <tr>
                                             <td>

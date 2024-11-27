@@ -4,6 +4,8 @@
     font-size: 14px;
     font-weight: 500;
     line-height: 20px;
+
+    
 }
 
 .header-header-empty {
@@ -11,7 +13,7 @@
     background-color: #f9f8fe;
     display: flex;
 
-    
+        
   }
 
   .header-sidebar {
@@ -40,11 +42,13 @@
 
 
 
-
+/* container */
 .header-content {
     -webkit-box-flex: 1;
     flex: 1 0;
     box-sizing: border-box;
+
+    
 }
 
 .wrapper {
