@@ -49,11 +49,12 @@ a {
 /* dekanat--container */
 @media (min-width: 1200px) {
     .dekanat--container {
-        width: 1069px;
         margin-right: auto;
         margin-left: auto;
         padding-left: 12px;
         padding-right: 12px;
+
+        padding: 20px 50px;
     }
 }
 
@@ -109,5 +110,4 @@ td {
     border-right: 1px solid #ededed;
     vertical-align: top;
     padding: 5px 10px;
-
 }

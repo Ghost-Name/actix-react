@@ -78,4 +78,3 @@ const DekanatTable: React.FC<{ children: React.ReactNode }> = ({ children }) => 
 };
 
 export default DekanatTable;
-
