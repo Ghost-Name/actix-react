@@ -1,7 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './dekanat_table.css';
 
+import * as XLSX from 'xlsx';
+/* лучше сделать чтение с .json файла */
+/* добавить границы таблицы с отображением информации о деканатах */
+
 const DekanatTable: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+    const [data, setData] = useState<any[][]>([]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(`${process.env.PUBLIC_URL}/data/data-dekanat.xlsx`);
+                const dataBlob = await response.blob(); // get dataBlob
+                const dataArrayBuffer = await dataBlob.arrayBuffer(); // convert to arrayBuffer
+
+                /* чтение */
+                const workBook = XLSX.read(dataArrayBuffer);
+                const workSheet = workBook.Sheets[workBook.SheetNames[0]];
+                const jsonData = XLSX.utils.sheet_to_json(workSheet, { header: 1 }) as any[][];
+
+                setData(jsonData);
+            } catch (error) {
+                console.error("Ошибка загрузки таблицы", error);
+            }
+        };
+
+        fetchData();
+    }, []);
+
     return(
         <div className="">
             <div className="breadcrumbs">
@@ -64,8 +91,13 @@ const DekanatTable: React.FC<{ children: React.ReactNode }> = ({ children }) => 
                                             </td>
                                         </tr>
                                         {/* чтение значений из таблицы для отображения */}
-
-
+                                        {data.map((row, rowIndex) => (
+                                            <tr key={rowIndex}>
+                                                {row.map((cell, cellIndex) => (
+                                                    <td key={cellIndex}>{cell}</td>
+                                                ))}
+                                            </tr>
+                                        ))}
                                     </tbody>
                                 </table>
                             </div>
