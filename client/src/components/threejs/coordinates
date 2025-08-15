@@ -1,0 +1,218 @@
+import React, { useRef, useEffect, useState } from 'react';
+import * as THREE from 'three';
+import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
+import './ThreeScene.css';
+
+const ThreeScene: React.FC = () => {
+    const mountRef = useRef<HTMLDivElement>(null);
+    const [markers, setMarkers] = useState<{x: number, y: number, z: number}[]>([]);
+    const [coordinates, setCoordinates] = useState({x: '', z: ''});
+    const sceneRef = useRef<THREE.Scene | null>(null);
+    const raycasterRef = useRef<THREE.Raycaster>(new THREE.Raycaster());
+    const mouseRef = useRef<THREE.Vector2>(new THREE.Vector2());
+    const rendererRef = useRef<THREE.WebGLRenderer | null>(null);
+    const cameraRef = useRef<THREE.PerspectiveCamera | null>(null);
+    const floorPlaneRef = useRef<THREE.Mesh | null>(null);
+
+    const CONSTANT_Y = 0.1; // Константное значение Y
+
+    useEffect(() => {
+        const mount = mountRef.current; // Копируем ref в переменную
+        if (!mount) return;
+
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(50, 1, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ antialias: true });
+
+        sceneRef.current = scene;
+        cameraRef.current = camera;
+        rendererRef.current = renderer;
+
+        if (mountRef.current) {
+            const width = mountRef.current.clientWidth;
+            const height = mountRef.current.clientHeight;
+            
+            renderer.setSize(width, height);
+            mountRef.current.appendChild(renderer.domElement);
+            renderer.setClearColor(0xdddddd, 1);
+        }
+
+        camera.position.set(0, 5, 0);
+        camera.lookAt(0, 0, 0);
+
+        // Создаем невидимую плоскость для определения кликов
+        const floorGeometry = new THREE.PlaneGeometry(100, 100);
+        const floorMaterial = new THREE.MeshBasicMaterial({
+            visible: false, // Делаем плоскость невидимой
+            side: THREE.DoubleSide
+        });
+        const floorPlane = new THREE.Mesh(floorGeometry, floorMaterial);
+        floorPlane.rotation.x = -Math.PI / 2; // Поворачиваем плоскость горизонтально
+        floorPlane.position.y = CONSTANT_Y;
+        scene.add(floorPlane);
+        floorPlaneRef.current = floorPlane;
+
+        // Загрузка модели лабиринта
+        // labyrinth.obj
+        const objLoader = new OBJLoader();
+        objLoader.load(
+            '/obj/floor.obj',
+            (object) => {
+                object.traverse((child) => {
+                    if (child instanceof THREE.Mesh) {
+                        child.material = new THREE.MeshBasicMaterial({ 
+                            color: 0x0095dd,
+                            wireframe: false
+                        });
+                    }
+                });
+
+                object.rotation.x = Math.PI;
+                const box = new THREE.Box3().setFromObject(object);
+                const center = box.getCenter(new THREE.Vector3());
+                object.position.sub(center);
+                const size = box.getSize(new THREE.Vector3()).length();
+                const scale = 5 / size;
+                object.scale.set(scale, scale, scale);
+
+                scene.add(object);
+            },
+            (xhr) => console.log((xhr.loaded / xhr.total) * 100 + '% loaded'),
+            (error) => console.error('Error loading model:', error)
+        );
+
+        // Обработчик клика для добавления маркера
+        const handleClick = (event: MouseEvent) => {
+            if (!mountRef.current || !sceneRef.current || !cameraRef.current || !floorPlaneRef.current) return;
+
+            // Получаем позицию клика относительно canvas
+            const rect = mountRef.current.getBoundingClientRect();
+            const x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+            const y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+
+            mouseRef.current.set(x, y);
+            raycasterRef.current.setFromCamera(mouseRef.current, cameraRef.current);
+
+            // Ищем пересечения только с полом (игнорируем стены лабиринта)
+            const intersects = raycasterRef.current.intersectObject(floorPlaneRef.current);
+
+            if (intersects.length > 0) {
+                const point = intersects[0].point;
+                const newMarker = {
+                    x: point.x,
+                    y: CONSTANT_Y,
+                    z: point.z
+                };
+                setMarkers(prev => [...prev, newMarker]);
+                
+                // Обновляем поля ввода
+                setCoordinates({
+                    x: point.x.toFixed(2),
+                    z: point.z.toFixed(2)
+                });
+            }
+        };
+
+        if (mountRef.current) {
+            mount.addEventListener('click', handleClick);
+        }
+
+        const resizeObserver = new ResizeObserver((entries) => {
+            for (let entry of entries) {
+                const { width, height } = entry.contentRect;
+                renderer.setSize(width, height);
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+            }
+        });
+
+        if (mountRef.current) {
+            resizeObserver.observe(mountRef.current);
+        }
+
+        const animate = () => {
+            requestAnimationFrame(animate);
+            renderer.render(scene, camera);
+        };
+
+        animate();
+
+        return () => {
+            mount.removeChild(renderer.domElement); // ✅ Используем сохранённую переменную
+            mount.removeEventListener('click', handleClick);
+            resizeObserver.disconnect();
+            renderer.dispose();
+        };
+    }, []);
+
+    // Добавление маркеров при изменении массива markers
+    useEffect(() => {
+        if (!sceneRef.current) return;
+
+        // Удаляем старые маркеры
+        sceneRef.current.children.forEach(child => {
+            if (child.userData.isMarker) {
+                sceneRef.current?.remove(child);
+            }
+        });
+
+        // Добавляем новые маркеры
+        markers.forEach(marker => {
+            const geometry = new THREE.SphereGeometry(0.1, 16, 16);
+            const material = new THREE.MeshBasicMaterial({ color: 0xff0000 });
+            const sphere = new THREE.Mesh(geometry, material);
+            sphere.position.set(marker.x, marker.y, marker.z);
+            sphere.userData.isMarker = true;
+            sceneRef.current?.add(sphere);
+        });
+    }, [markers]);
+
+    const handleAddMarker = () => {
+        const x = parseFloat(coordinates.x);
+        const z = parseFloat(coordinates.z);
+
+        if (!isNaN(x) && !isNaN(z)) {
+            setMarkers(prev => [...prev, {x, y: CONSTANT_Y, z}]);
+            setCoordinates({x: '', z: ''});
+        }
+    };
+
+    return (
+        <div className="three-scene-container">
+            <div className="three-scene--content" ref={mountRef} />
+            
+            <div className="marker-controls">
+                <h3>Добавить маркер</h3>
+                <div>
+                    <label>X: </label>
+                    <input 
+                        type="number" 
+                        value={coordinates.x}
+                        onChange={(e) => setCoordinates({...coordinates, x: e.target.value})}
+                    />
+                </div>
+                <div>
+                    <label>Z: </label>
+                    <input 
+                        type="number" 
+                        value={coordinates.z}
+                        onChange={(e) => setCoordinates({...coordinates, z: e.target.value})}
+                    />
+                </div>
+                <button onClick={handleAddMarker}>Добавить</button>
+                
+                <div className="coordinates-display">
+                    <h4>Последние координаты:</h4>
+                    {markers.length > 0 && (
+                        <>
+                            <p>X: {markers[markers.length - 1].x.toFixed(2)}</p>
+                            <p>Z: {markers[markers.length - 1].z.toFixed(2)}</p>
+                        </>
+                    )}
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default ThreeScene;
